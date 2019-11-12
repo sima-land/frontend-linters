@@ -1,0 +1,31 @@
+{
+  "name": "frontend-linters",
+  "version": "0.0.1",
+  "description": "Sima-land frontend code style linters",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@gitlab.sima-land.ru:7888/dev-dep/dev/frontend-linters.git"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
+  "author": "www.sima-land.ru team",
+  "license": "MIT",
+  "dependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.6.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^23.0.3",
+    "eslint-plugin-jsdoc": "^17.1.1",
+    "eslint-plugin-react": "^7.16.0"
+  },
+  "devDependencies": {
+    "husky": "^3.0.9"
+  }
+}

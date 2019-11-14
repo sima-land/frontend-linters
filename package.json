@@ -1,6 +1,9 @@
 {
   "name": "frontend-linters",
-  "version": "0.0.1",
+  "publishConfig": {
+    "@dev-dep:registry": "https://gitlab.sima-land.ru/api/v4/projects/919/packages/npm/"
+  },
+  "version": "0.0.0",
   "description": "Sima-land frontend code style linters",
   "scripts": {
     "lint": "eslint .",

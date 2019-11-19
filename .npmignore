@@ -1,1 +1,10 @@
+# Settings Gitlab-CI
 .gitlab-ci.yml
+
+# Settings ESLint
+.eslintrc.json
+.eslintignore
+.stylelintrc
+
+# Settings dependency yarn
+yarn.lock

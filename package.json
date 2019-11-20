@@ -1,5 +1,5 @@
 {
-  "name": "@dev-dep/frontend-linters",
+  "name": "@dev-dep/linters",
   "publishConfig": {
     "@dev-dep:registry": "https://gitlab.sima-land.ru/api/v4/projects/919/packages/npm/"
   },

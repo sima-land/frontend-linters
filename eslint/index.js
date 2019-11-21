@@ -122,7 +122,7 @@ module.exports = {
       'error',
       {
         before: true,
-        after: false,
+        after: true,
       },
     ],
     'import/newline-after-import': [
@@ -280,7 +280,7 @@ module.exports = {
     'no-shadow': [
       'error',
       {
-        builtinGlobals: true,
+        builtinGlobals: false,
       },
     ],
     'no-trailing-spaces': 'error',

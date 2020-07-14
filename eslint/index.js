@@ -1,3 +1,5 @@
+const restrictedGlobals = require('confusing-browser-globals');
+
 /**
  * ВНИМАНИЕ: правила отсортированы по алфавиту, просьба соблюдать такой порядок.
  */
@@ -271,11 +273,7 @@ module.exports = {
     ],
     'no-restricted-globals': [
       'error',
-      'name',
-      'status',
-      'find',
-      'event',
-      'length',
+      ...restrictedGlobals,
     ],
     'no-shadow': [
       'error',

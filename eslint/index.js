@@ -6,15 +6,15 @@ const restrictedGlobals = require('confusing-browser-globals');
 module.exports = {
   plugins: [
     'react',
-    'jest',
     'import',
     'jsdoc',
+    'jest',
   ],
   env: {
     browser: true,
     es6: true,
     node: true,
-    'jest/globals': true,
+    'jest/globals': false,
   },
   settings: {
     react: {
@@ -157,11 +157,6 @@ module.exports = {
         ],
       },
     ],
-    'jest/no-disabled-tests': 'error',
-    'jest/no-focused-tests': 'error',
-    'jest/no-identical-title': 'error',
-    'jest/prefer-to-have-length': 'error',
-    'jest/valid-expect': 'error',
     'jsdoc/check-indentation': 'error',
     'jsdoc/check-param-names': 'error',
     'jsdoc/check-tag-names': 'error',
@@ -443,4 +438,32 @@ module.exports = {
       },
     ],
   },
+  overrides: [
+    {
+      files: [
+        '**/*.test.*',
+      ],
+      env: {
+        'jest/globals': true,
+      },
+      rules: {
+        'jest/no-disabled-tests': 'error',
+        'jest/no-focused-tests': 'error',
+        'jest/no-identical-title': 'error',
+        'jest/prefer-to-have-length': 'error',
+        'jest/valid-expect': 'error',
+      }
+    },
+    {
+      files: [
+        '**/*.test.*',
+        '**/*.stories.*',
+      ],
+      rules: {
+        'require-jsdoc': 'off',
+        'react/prop-types': 'off',
+        'jsdoc/require-jsdoc': 'off',
+      }
+    },
+  ],
 };

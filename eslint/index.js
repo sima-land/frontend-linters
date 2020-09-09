@@ -452,7 +452,7 @@ module.exports = {
         'jest/no-identical-title': 'error',
         'jest/prefer-to-have-length': 'error',
         'jest/valid-expect': 'error',
-      }
+      },
     },
     {
       files: [
@@ -463,7 +463,7 @@ module.exports = {
         'require-jsdoc': 'off',
         'react/prop-types': 'off',
         'jsdoc/require-jsdoc': 'off',
-      }
+      },
     },
   ],
 };

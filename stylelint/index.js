@@ -35,6 +35,9 @@ module.exports = {
         severity: 'error',
       },
     ],
+    'declaration-property-unit-disallowed-list': {
+      'font-size': ['rem', 'em', 'pt', 'percent'],
+    },
     'function-url-quotes': 'never',
     indentation: 2,
     'max-nesting-depth': 10,

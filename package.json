@@ -7,7 +7,7 @@
   "description": "Sima-land frontend code style linters",
   "scripts": {
     "lint": "eslint .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -15,7 +15,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint"
+      "pre-commit": "yarn lint",
+      "pre-push": "yarn test"
     }
   },
   "author": "www.sima-land.ru team",
@@ -29,10 +30,11 @@
     "eslint-plugin-jsdoc": "30.4.0",
     "eslint-plugin-react": "^7.16.0",
     "stylelint": "13.7.2",
-    "stylelint-config-sass-guidelines": "^6.1.0",
+    "stylelint-config-sass-guidelines": "^7.1.0",
     "stylelint-scss": "^3.12.1"
   },
   "devDependencies": {
-    "husky": "^3.0.9"
+    "husky": "^3.0.9",
+    "jest": "^26.6.0"
   }
 }

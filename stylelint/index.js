@@ -25,7 +25,7 @@ module.exports = {
     'declaration-block-no-duplicate-properties': true,
     'declaration-colon-space-after': 'always',
     'declaration-no-important': null,
-    'declaration-property-value-blacklist': [
+    'declaration-property-value-disallowed-list': [
       {
         '/^.*/': [
           'unset',

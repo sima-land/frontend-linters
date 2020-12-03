@@ -8,19 +8,8 @@ module.exports = {
     '**/*.jsx',
   ],
   rules: {
-    'at-rule-no-unknown': [
-      true,
-      {
-        ignoreAtRules: [
-          'for',
-          'if',
-          'each',
-          'include',
-          'mixin',
-          'extend',
-        ],
-      },
-    ],
+    'at-rule-no-unknown': null,
+    'scss/at-rule-no-unknown': true,
     'at-rule-no-vendor-prefix': null,
     'declaration-block-no-duplicate-properties': true,
     'declaration-colon-space-after': 'always',

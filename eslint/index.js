@@ -21,6 +21,7 @@ module.exports = {
       version: 'detect',
     },
     jsdoc: {
+      mode: 'typescript',
       tagNamePreference: {
         arg: 'param',
         argument: 'param',
@@ -158,7 +159,9 @@ module.exports = {
       },
     ],
     'jsdoc/check-indentation': 'error',
-    'jsdoc/check-param-names': 'error',
+    'jsdoc/check-param-names': ['error', {
+      checkDestructured: false,
+    }],
     'jsdoc/check-tag-names': 'error',
     'jsdoc/newline-after-description': [
       'error',

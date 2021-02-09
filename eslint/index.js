@@ -51,8 +51,9 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:jsdoc/recommended',
   ],
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   parserOptions: {
+    requireConfigFile: false,
     ecmaVersion: 2018,
     sourceType: 'module',
     ecmaFeatures: {
@@ -185,10 +186,13 @@ module.exports = {
         ],
       },
     ],
-    'jsdoc/require-param': 'error',
+    'jsdoc/require-param': ['error', {
+      checkDestructured: false,
+    }],
     'jsdoc/require-param-description': 'error',
     'jsdoc/require-param-name': 'error',
     'jsdoc/require-param-type': 'error',
+    'jsdoc/require-yields': 'off',
     'jsdoc/require-returns': 'error',
     'jsdoc/require-returns-check': 'error',
     'jsdoc/require-returns-description': 'error',

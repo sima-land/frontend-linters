@@ -28,6 +28,24 @@ export function testFn2 ({ prop: { a, b, c } }) {
 }
 
 /**
+ * Returns a number too.
+ * @param {{ prop }} props Props.
+ * @return {number} A number.
+ */
+export function testFn3 ({ prop }) {
+  return Number(prop);
+}
+
+/**
+ * Yields numbers.
+ */
+export function * testFn4 () {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+/**
  * @param {import('./event').CustomEvent} event Event.
  */
 export function testTypeImport (event) {
@@ -42,6 +60,7 @@ describe('eslint config', () => {
 
     results.forEach(result => {
       expect(result.errorCount).toBe(0);
+      expect(result.warningCount).toBe(0);
     });
   });
 });

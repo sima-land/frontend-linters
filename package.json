@@ -1,8 +1,5 @@
 {
-  "name": "@dev-dep/linters",
-  "publishConfig": {
-    "@dev-dep:registry": "https://gitlab.sima-land.ru/api/v4/projects/919/packages/npm/"
-  },
+  "name": "@sima-land/linters",
   "version": "0.0.0",
   "description": "Sima-land frontend code style linters",
   "scripts": {
@@ -11,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@gitlab.sima-land.ru:7888/dev-dep/dev/frontend-linters.git"
+    "url": "git@github.com:sima-land/frontend-linters.git"
   },
   "husky": {
     "hooks": {

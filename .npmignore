@@ -1,6 +1,3 @@
-# Settings Gitlab-CI
-.gitlab-ci.yml
-
 # Settings ESLint
 .eslintrc.json
 .eslintignore

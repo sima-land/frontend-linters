@@ -1,5 +1,5 @@
-# Settings Gitlab-CI
-.gitlab-ci.yml
+# ci
+.github
 
 # Settings ESLint
 .eslintrc.json

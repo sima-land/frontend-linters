@@ -1,10 +1,8 @@
 const restrictedGlobals = require('confusing-browser-globals');
 
-/**
- * ВНИМАНИЕ: правила отсортированы по алфавиту, просьба соблюдать такой порядок.
- */
 module.exports = {
   plugins: [
+    'lodash',
     'react',
     'import',
     'jsdoc',
@@ -444,8 +442,38 @@ module.exports = {
         after: false,
       },
     ],
+    'lodash/import-scope': [
+      'error',
+      'member',
+    ],
   },
   overrides: [
+    {
+      files: [
+        '*.ts',
+        '*.tsx',
+      ],
+      plugins: [
+        '@typescript-eslint',
+      ],
+      parserOptions: {
+        parser: '@typescript-eslint/parser',
+      },
+      extends: [
+        'plugin:@typescript-eslint/recommended',
+      ],
+      rules: {
+        '@typescript-eslint/no-explicit-any': 'off',
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': 'error',
+        'no-use-before-define': 'off',
+        '@typescript-eslint/no-use-before-define': 'error',
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+        'jsdoc/require-param-type': 'off',
+        'jsdoc/require-returns-type': 'off',
+        'jsdoc/require-yields': 'off',
+      },
+    },
     {
       files: [
         '**/*.test.*',

@@ -1,13 +1,19 @@
 module.exports = {
-  extends: 'stylelint-config-sass-guidelines',
+  extends: [
+    'stylelint-config-sass-guidelines',
+  ],
   plugins: [
     'stylelint-scss',
   ],
   ignoreFiles: [
     '**/*.js',
     '**/*.jsx',
+    '**/*.ts',
+    '**/*.tsx',
+    '**/*.html',
   ],
   rules: {
+    indentation: 2,
     'at-rule-no-unknown': null,
     'scss/at-rule-no-unknown': true,
     'at-rule-no-vendor-prefix': null,
@@ -28,7 +34,6 @@ module.exports = {
       'font-size': ['rem', 'em', 'pt', 'percent'],
     },
     'function-url-quotes': 'never',
-    indentation: 2,
     'max-nesting-depth': 10,
     'media-feature-name-no-vendor-prefix': true,
     'no-descending-specificity': null,

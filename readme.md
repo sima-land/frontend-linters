@@ -62,15 +62,15 @@ module.exports = require('@sima-land/linters/prettier');
 
 ### Настройка git-хуков
 
-Удобно использовать `husky` в связке с `lint-staged`, для этого необходимо
+Удобно использовать `husky` в связке с `lint-staged`, для этого необходимо:
 
-1. Устанавливаем пакеты
+1. Установить пакеты
 
 ```bash
 npm i -D husky lint-staged
 ```
 
-2. Создаем в корне проекта файл `lint-staged.config.js` со следующим содержимым:
+2. Создать в корне проекта файл `lint-staged.config.js` со следующим содержимым:
 
 ```js
 module.exports = {
@@ -85,7 +85,9 @@ module.exports = {
 };
 ```
 
-3. Добавляем **pre-commit** хук согласно документации husky: `npx lint-staged`
+3. Добавить **pre-commit** хук согласно документации husky: `npx lint-staged`
+
+https://typicode.github.io/husky/#/?id=create-a-hook
 
 ### Конфигурация текстовых редакторов
 

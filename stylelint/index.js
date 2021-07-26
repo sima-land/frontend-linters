@@ -1,17 +1,7 @@
 module.exports = {
-  extends: [
-    'stylelint-config-sass-guidelines',
-  ],
-  plugins: [
-    'stylelint-scss',
-  ],
-  ignoreFiles: [
-    '**/*.js',
-    '**/*.jsx',
-    '**/*.ts',
-    '**/*.tsx',
-    '**/*.html',
-  ],
+  extends: ['stylelint-config-sass-guidelines', 'stylelint-config-prettier'],
+  plugins: ['stylelint-scss'],
+  ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx', '**/*.html'],
   rules: {
     indentation: 2,
     'at-rule-no-unknown': null,
@@ -22,9 +12,7 @@ module.exports = {
     'declaration-no-important': null,
     'declaration-property-value-disallowed-list': [
       {
-        '/^.*/': [
-          'unset',
-        ],
+        '/^.*/': ['unset'],
       },
       {
         severity: 'error',
@@ -37,7 +25,7 @@ module.exports = {
     'max-nesting-depth': 10,
     'media-feature-name-no-vendor-prefix': true,
     'no-descending-specificity': null,
-    'number-leading-zero': 'never',
+    'number-leading-zero': 'always',
     'order/order': null,
     'order/properties-alphabetical-order': null,
     'property-no-unknown': null,
@@ -45,10 +33,7 @@ module.exports = {
     'rule-empty-line-before': [
       'always',
       {
-        except: [
-          'after-single-line-comment',
-          'inside-block',
-        ],
+        except: ['after-single-line-comment', 'inside-block'],
         ignore: [],
       },
     ],

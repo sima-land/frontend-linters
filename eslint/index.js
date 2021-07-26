@@ -1,13 +1,7 @@
 const restrictedGlobals = require('confusing-browser-globals');
 
 module.exports = {
-  plugins: [
-    'lodash',
-    'react',
-    'import',
-    'jsdoc',
-    'jest',
-  ],
+  plugins: ['lodash', 'react', 'import', 'jsdoc', 'jest'],
   env: {
     browser: true,
     es6: true,
@@ -48,6 +42,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:jsdoc/recommended',
+    'prettier',
   ],
   parser: '@babel/eslint-parser',
   parserOptions: {
@@ -59,30 +54,7 @@ module.exports = {
     },
   },
   rules: {
-    'array-bracket-newline': [
-      'error',
-      'consistent',
-    ],
-    'array-bracket-spacing': [
-      'error',
-      'never',
-    ],
     'array-callback-return': 'error',
-    'arrow-body-style': [
-      'error',
-      'as-needed',
-    ],
-    'arrow-parens': [
-      'error',
-      'as-needed',
-    ],
-    'arrow-spacing': [
-      'error',
-      {
-        before: true,
-        after: true,
-      },
-    ],
     camelcase: [
       'error',
       {
@@ -90,43 +62,9 @@ module.exports = {
         ignoreDestructuring: false,
       },
     ],
-    'comma-dangle': [
-      'error',
-      {
-        arrays: 'always-multiline',
-        exports: 'always-multiline',
-        imports: 'always-multiline',
-        objects: 'always-multiline',
-      },
-    ],
-    'comma-spacing': [
-      'error',
-      {
-        before: false,
-        after: true,
-      },
-    ],
-    curly: [
-      'error',
-      'all',
-    ],
     'dot-notation': 'error',
-    'eol-last': [
-      'error',
-      'always',
-    ],
+    'eol-last': ['error', 'always'],
     eqeqeq: 'error',
-    'function-paren-newline': [
-      'error',
-      'consistent',
-    ],
-    'generator-star-spacing': [
-      'error',
-      {
-        before: true,
-        after: true,
-      },
-    ],
     'import/newline-after-import': [
       'error',
       {
@@ -145,48 +83,33 @@ module.exports = {
         allowObject: false,
       },
     ],
-    indent: [
+    'jsdoc/check-indentation': 'error',
+    'jsdoc/check-param-names': [
       'error',
-      2,
       {
-        SwitchCase: 1,
-        MemberExpression: 1,
-        ObjectExpression: 1,
-        ignoredNodes: [
-          'TemplateLiteral *',
-        ],
+        checkDestructured: false,
       },
     ],
-    'jsdoc/check-indentation': 'error',
-    'jsdoc/check-param-names': ['error', {
-      checkDestructured: false,
-    }],
     'jsdoc/check-tag-names': 'error',
-    'jsdoc/newline-after-description': [
-      'error',
-      'never',
-    ],
+    'jsdoc/newline-after-description': ['error', 'never'],
     'jsdoc/no-undefined-types': [
       'error',
       {
-        definedTypes: [
-          'ReactElement',
-          'SyntheticEvent',
-        ],
+        definedTypes: ['ReactElement', 'SyntheticEvent'],
       },
     ],
     'jsdoc/require-description-complete-sentence': [
       'error',
       {
-        tags: [
-          'typedef',
-          'property',
-        ],
+        tags: ['typedef', 'property'],
       },
     ],
-    'jsdoc/require-param': ['error', {
-      checkDestructured: false,
-    }],
+    'jsdoc/require-param': [
+      'error',
+      {
+        checkDestructured: false,
+      },
+    ],
     'jsdoc/require-param-description': 'error',
     'jsdoc/require-param-name': 'error',
     'jsdoc/require-param-type': 'error',
@@ -196,59 +119,11 @@ module.exports = {
     'jsdoc/require-returns-description': 'error',
     'jsdoc/require-returns-type': 'error',
     'jsdoc/valid-types': 'error',
-    'jsx-quotes': [
-      'error',
-      'prefer-single',
-    ],
-    'key-spacing': [
-      'error',
-      {
-        mode: 'strict',
-        beforeColon: false,
-        afterColon: true,
-      },
-    ],
-    'keyword-spacing': [
-      'error',
-      {
-        before: true,
-        after: true,
-      },
-    ],
-    'lines-around-comment': [
-      'error',
-      {
-        allowArrayEnd: true,
-        allowArrayStart: true,
-        allowBlockEnd: true,
-        allowBlockStart: true,
-        allowClassEnd: true,
-        allowClassStart: true,
-        allowObjectEnd: true,
-        allowObjectStart: true,
-        beforeBlockComment: true,
-        beforeLineComment: true,
-      },
-    ],
-    'max-len': [
-      'error',
-      {
-        code: 120,
-      },
-    ],
     'no-array-constructor': 'error',
     'no-console': 'error',
     'no-duplicate-imports': 'error',
     'no-eval': 'error',
     'no-extra-boolean-cast': 'error',
-    'no-extra-parens': [
-      'error',
-      'all',
-      {
-        ignoreJSX: 'all',
-        nestedBinaryExpressions: false,
-      },
-    ],
     'no-implicit-coercion': 'error',
     'no-mixed-operators': 'error',
     'no-multi-assign': 'error',
@@ -271,10 +146,7 @@ module.exports = {
         props: false,
       },
     ],
-    'no-restricted-globals': [
-      'error',
-      ...restrictedGlobals,
-    ],
+    'no-restricted-globals': ['error', ...restrictedGlobals],
     'no-shadow': [
       'error',
       {
@@ -295,18 +167,7 @@ module.exports = {
     'no-useless-constructor': 'error',
     'no-useless-return': 'error',
     'no-var': 'error',
-    'no-whitespace-before-property': 'error',
-    'object-curly-spacing': [
-      'error',
-      'always',
-      {
-        arraysInObjects: true,
-      },
-    ],
-    'object-shorthand': [
-      'error',
-      'always',
-    ],
+    'object-shorthand': ['error', 'always'],
     'one-var': [
       'error',
       {
@@ -315,88 +176,23 @@ module.exports = {
         const: 'never',
       },
     ],
-    'operator-linebreak': [
-      'error',
-      'before',
-    ],
-    'padded-blocks': [
-      'error',
-      'never',
-    ],
+    'padded-blocks': ['error', 'never'],
     'prefer-const': 'error',
     'prefer-template': 'error',
-    'quote-props': [
-      'error', 'as-needed',
-    ],
-    quotes: [
-      'error',
-      'single',
-    ],
-    radix: [
-      'error',
-      'as-needed',
-    ],
-    'react/display-name': [
-      'off',
-    ],
+    'quote-props': ['error', 'as-needed'],
+    radix: ['error', 'as-needed'],
+    'react/display-name': ['off'],
     'react/jsx-boolean-value': 'error',
-    'react/jsx-closing-bracket-location': [
-      'error',
-      'tag-aligned',
-    ],
     'react/jsx-curly-brace-presence': [
       'error',
       {
         props: 'never',
       },
     ],
-    'react/jsx-curly-spacing': [
-      'error',
-      {
-        when: 'never',
-        children: true,
-      },
-    ],
-    'react/jsx-equals-spacing': [
-      'error',
-      'never',
-    ],
-    'react/jsx-max-props-per-line': [
-      'error',
-      {
-        when:
-        'multiline',
-      },
-    ],
-    'react/jsx-tag-spacing': [
-      'error',
-      {
-        closingSlash: 'never',
-        beforeSelfClosing: 'always',
-        afterOpening: 'never',
-        beforeClosing: 'never',
-      },
-    ],
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
-    'react/jsx-wrap-multilines': [
-      'error',
-      {
-        declaration: 'parens-new-line',
-        assignment: 'parens-new-line',
-        return: 'parens-new-line',
-        arrow: 'parens-new-line',
-        condition: 'parens-new-line',
-        logical: 'parens-new-line',
-        prop: 'parens-new-line',
-      },
-    ],
-    'react/no-children-prop': [
-      'off',
-    ],
-    'react/prop-types': [
-      'off',
-    ],
+    'react/no-children-prop': ['off'],
+    'react/prop-types': ['off'],
     'require-jsdoc': [
       'error',
       {
@@ -409,59 +205,19 @@ module.exports = {
         },
       },
     ],
-    semi: [
-      'error',
-      'always',
-    ],
-    'space-before-blocks': 'error',
-    'space-before-function-paren': [
-      'error',
-      'always',
-    ],
-    'space-in-parens': [
-      'error',
-      'never',
-    ],
     'space-infix-ops': 'error',
-    'spaced-comment': [
-      'error',
-      'always',
-    ],
-    'template-curly-spacing': [
-      'error',
-      'never',
-    ],
-    'template-tag-spacing': [
-      'error',
-      'never',
-    ],
-    'yield-star-spacing': [
-      'error',
-      {
-        before: true,
-        after: false,
-      },
-    ],
-    'lodash/import-scope': [
-      'error',
-      'member',
-    ],
+    'spaced-comment': ['error', 'always'],
+    'lodash/import-scope': ['error', 'member'],
   },
   overrides: [
+    // typescript
     {
-      files: [
-        '*.ts',
-        '*.tsx',
-      ],
-      plugins: [
-        '@typescript-eslint',
-      ],
+      files: ['*.ts', '*.tsx'],
+      plugins: ['@typescript-eslint'],
       parserOptions: {
         parser: '@typescript-eslint/parser',
       },
-      extends: [
-        'plugin:@typescript-eslint/recommended',
-      ],
+      extends: ['plugin:@typescript-eslint/recommended'],
       rules: {
         '@typescript-eslint/no-explicit-any': 'off',
         'no-unused-vars': 'off',
@@ -474,10 +230,10 @@ module.exports = {
         'jsdoc/require-yields': 'off',
       },
     },
+
+    // тесты
     {
-      files: [
-        '**/*.test.*',
-      ],
+      files: ['**/*.test.*', '**/__mocks__/*', '**/__fixtures__/*'],
       env: {
         'jest/globals': true,
       },
@@ -490,10 +246,7 @@ module.exports = {
       },
     },
     {
-      files: [
-        '**/*.test.*',
-        '**/*.stories.*',
-      ],
+      files: ['**/*.test.*', '**/*.stories.*'],
       rules: {
         'require-jsdoc': 'off',
         'react/prop-types': 'off',

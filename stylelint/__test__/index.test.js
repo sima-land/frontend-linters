@@ -12,13 +12,14 @@ describe('stylelint configuration', () => {
 
     expect(errored).toBe(true);
 
-    expect(results[0].warnings[0].text)
-      .toBe('Unexpected unit "pt" for property "font-size" (declaration-property-unit-disallowed-list)');
+    expect(results[0].warnings[0].text).toBe(
+      'Unexpected unit "pt" for property "font-size" (declaration-property-unit-disallowed-list)',
+    );
   });
 
   it('should throw error with unknown at-rules', async function () {
     const { errored, results } = await stylelint.lint({
-      code: '@hello-world \'string\';\n',
+      code: "@hello-world 'string';\n",
       config,
     });
 
@@ -26,13 +27,14 @@ describe('stylelint configuration', () => {
 
     expect(errored).toBe(true);
 
-    expect(results[0].warnings[0].text)
-      .toBe('Unexpected unknown at-rule "@hello-world" (at-rule-no-unknown) (scss/at-rule-no-unknown)');
+    expect(results[0].warnings[0].text).toBe(
+      'Unexpected unknown at-rule "@hello-world" (scss/at-rule-no-unknown)',
+    );
   });
 
   it('should not throw error with scss at-rules', async function () {
     const { errored, results } = await stylelint.lint({
-      code: '@use \'scss:math\';\n@warn \'hello world\'\n',
+      code: "@use 'scss:math';\n@warn 'hello world'\n",
       config,
     });
 

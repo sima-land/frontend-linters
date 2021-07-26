@@ -1,10 +1,13 @@
 # ci
 .github
 
-# Settings ESLint
+# конфиги ide
+.DS_Store
+.idea
+.vscode
+
+# конфиги проекта
 .eslintrc.json
 .eslintignore
 .stylelintrc
-
-# Settings dependency yarn
-yarn.lock
+.prettierrc.js

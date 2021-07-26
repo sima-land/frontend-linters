@@ -64,7 +64,7 @@ module.exports = require('@sima-land/linters/prettier');
 
 Удобно использовать `husky` в связке с `lint-staged`, для этого необходимо
 
-1. Устанавливаем пакет
+1. Устанавливаем пакеты
 
 ```bash
 npm i -D husky lint-staged

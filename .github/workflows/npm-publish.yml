@@ -1,4 +1,4 @@
-name: Sima-land linters configurations npm package
+name: Publish Node.js Package
 
 on:
   release:

@@ -1,12 +1,11 @@
 const restrictedGlobals = require('confusing-browser-globals');
 
 module.exports = {
-  plugins: ['lodash', 'react', 'import', 'jsdoc', 'jest'],
+  plugins: ['lodash', 'react', 'import', 'jsdoc'],
   env: {
     browser: true,
     es6: true,
     node: true,
-    'jest/globals': false,
   },
   settings: {
     react: {
@@ -231,25 +230,22 @@ module.exports = {
       },
     },
 
-    // тесты
+    // jest-тесты
     {
+      plugins: ['jest'],
+      extends: ['plugin:jest/recommended'],
       files: ['**/*.test.*', '**/__mocks__/*', '**/__fixtures__/*'],
       env: {
         'jest/globals': true,
       },
       rules: {
+        'jest/no-mocks-import': 'off',
         'jest/no-disabled-tests': 'error',
         'jest/no-focused-tests': 'error',
         'jest/no-identical-title': 'error',
         'jest/prefer-to-have-length': 'error',
         'jest/valid-expect': 'error',
-      },
-    },
-    {
-      files: ['**/*.test.*', '**/*.stories.*'],
-      rules: {
         'require-jsdoc': 'off',
-        'react/prop-types': 'off',
         'jsdoc/require-jsdoc': 'off',
       },
     },

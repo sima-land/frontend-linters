@@ -8,10 +8,10 @@
 
 ```bash
 # npm
-$ npm i -D @sima-land/linters
+$ npm i -D @sima-land/linters eslint stylelint prettier
 
 # или yarn
-yarn add -D @sima-land/linters
+yarn add -D @sima-land/linters eslint stylelint prettier
 ```
 
 ### Конфигурация

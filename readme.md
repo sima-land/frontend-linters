@@ -76,7 +76,7 @@ npm i -D husky lint-staged
 module.exports = {
   '*.{js,jsx,ts,tsx}': [
     'prettier --write',
-    'eslint --fix',
+    'eslint --fix --ext .js,.jsx,.ts,.tsx',
   ],
   '*.{css,scss}': [
     'prettier --write',
@@ -88,6 +88,13 @@ module.exports = {
 3. Добавить **pre-commit** хук согласно документации husky: `npx lint-staged`
 
 https://typicode.github.io/husky/#/?id=create-a-hook
+
+### Проблемы с ESLint
+
+ESLint может бросать ошибку, говоря что не может найти плагины, требуемые в конфигурации.
+
+В этом случае поможет пакет `@rushstack/eslint-patch`:
+https://github.com/microsoft/rushstack/tree/master/stack/eslint-patch
 
 ### Конфигурация текстовых редакторов
 

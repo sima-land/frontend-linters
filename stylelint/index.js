@@ -3,7 +3,7 @@ module.exports = {
   plugins: ['stylelint-scss'],
   ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx', '**/*.html'],
   rules: {
-    indentation: 2,
+    indentation: null,
     'at-rule-no-unknown': null,
     'scss/at-rule-no-unknown': true,
     'at-rule-no-vendor-prefix': null,

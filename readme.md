@@ -26,7 +26,7 @@ yarn add -D @sima-land/linters eslint stylelint prettier
   },
   "stylelint": {
     "extends": "@sima-land/linters/stylelint"
-  },
+  }
 }
 ```
 
@@ -41,6 +41,14 @@ module.exports = {
   extends: require.resolve('@sima-land/linters/eslint'),
 };
 ```
+
+Правила разбиты по модулям:
+
+- `./linters/eslint/base` - базовые правила JS
+- `./linters/eslint/react` - правила React/JSX
+- `./linters/eslint/jest` - правила для Jest-тестов
+- `./linters/eslint/typescript` - для ts/tsx файлов
+- `./linters/eslint` - все правила вместе
 
 ##### Stylelint
 
@@ -74,14 +82,8 @@ npm i -D husky lint-staged
 
 ```js
 module.exports = {
-  '*.{js,jsx,ts,tsx}': [
-    'prettier --write',
-    'eslint --fix --ext .js,.jsx,.ts,.tsx',
-  ],
-  '*.{css,scss}': [
-    'prettier --write',
-    'stylelint',
-  ],
+  '*.{js,jsx,ts,tsx}': ['prettier --write', 'eslint --fix --ext .js,.jsx,.ts,.tsx'],
+  '*.{css,scss}': ['prettier --write', 'stylelint'],
 };
 ```
 

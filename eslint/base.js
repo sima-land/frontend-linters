@@ -43,6 +43,11 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
+    babelOptions: {
+      parserOpts: {
+        plugins: ['jsx'],
+      },
+    },
   },
   rules: {
     'array-callback-return': 'error',

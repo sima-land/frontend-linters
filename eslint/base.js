@@ -112,6 +112,7 @@ module.exports = {
     'jsdoc/require-returns-description': 'error',
     'jsdoc/require-returns-type': 'error',
     'jsdoc/valid-types': 'error',
+    'no-alert': 'error',
     'no-array-constructor': 'error',
     'no-console': 'error',
     'no-duplicate-imports': 'error',

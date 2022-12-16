@@ -1,6 +1,6 @@
 # Frontend linters
 
-Пакет с конфигурационными файлами для валидации проектов.
+Пакет с пресетами конфигураций линтеров.
 
 ## Использование
 
@@ -46,9 +46,10 @@ module.exports = {
 
 - `./linters/eslint/base` - базовые правила JS
 - `./linters/eslint/react` - правила React/JSX
+- `./linters/eslint/react-hooks` - правила React-хуков
 - `./linters/eslint/jest` - правила для Jest-тестов
 - `./linters/eslint/typescript` - для ts/tsx файлов
-- `./linters/eslint` - все правила вместе
+- `./linters/eslint` - все правила вместе (без `react-hooks`, временно)
 
 ##### Stylelint
 
@@ -96,7 +97,9 @@ https://typicode.github.io/husky/#/?id=create-a-hook
 ESLint может бросать ошибку, говоря что не может найти плагины, требуемые в конфигурации.
 
 В этом случае поможет пакет `@rushstack/eslint-patch`:
-https://github.com/microsoft/rushstack/tree/master/stack/eslint-patch
+
+- https://www.npmjs.com/package/@rushstack/eslint-patch
+- https://github.com/microsoft/rushstack/tree/main/eslint/eslint-patch
 
 ### Конфигурация текстовых редакторов
 

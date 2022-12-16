@@ -8,18 +8,16 @@ jobs:
   publish-npm:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 16
           registry-url: https://registry.npmjs.org/
 
       - name: Install dependencies
-        run: |
-          npm i -g npm@7 --registry=https://registry.npmjs.org
-          npm ci
+        run: npm ci
 
-      - run: npm set-script prepare ""
+      - run: npm pkg delete scripts.prepare
       - run: npm --no-git-tag-version version ${GITHUB_REF#refs/*/}
       - run: npm publish --access public
         env:

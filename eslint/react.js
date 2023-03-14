@@ -5,7 +5,7 @@ module.exports = {
       version: 'detect',
     },
   },
-  extends: ['plugin:react/recommended'],
+  extends: ['plugin:react/recommended', 'plugin:react/jsx-runtime'],
   rules: {
     'jsdoc/no-undefined-types': [
       'error',

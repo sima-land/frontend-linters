@@ -1,14 +1,12 @@
 module.exports = {
-  extends: ['stylelint-config-sass-guidelines', 'stylelint-config-prettier'],
-  plugins: ['stylelint-scss'],
+  extends: ['stylelint-config-sass-guidelines'],
+  plugins: ['stylelint-scss', 'stylelint-prettier'],
   ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx', '**/*.html'],
   rules: {
-    indentation: null,
     'at-rule-no-unknown': null,
     'scss/at-rule-no-unknown': true,
     'at-rule-no-vendor-prefix': null,
     'declaration-block-no-duplicate-properties': true,
-    'declaration-colon-space-after': 'always',
     'declaration-no-important': null,
     'declaration-property-value-disallowed-list': [
       {
@@ -25,9 +23,6 @@ module.exports = {
     'max-nesting-depth': 10,
     'media-feature-name-no-vendor-prefix': true,
     'no-descending-specificity': null,
-    'number-leading-zero': 'always',
-    'order/order': null,
-    'order/properties-alphabetical-order': null,
     'property-no-unknown': null,
     'property-no-vendor-prefix': null,
     'rule-empty-line-before': [
@@ -43,13 +38,10 @@ module.exports = {
     'scss/dollar-variable-pattern': null,
     'scss/percent-placeholder-pattern': null,
     'selector-class-pattern': '^([a-z0-9]*)(-[a-z0-9]+)*$',
-    'selector-combinator-space-after': 'always',
-    'selector-list-comma-space-before': 'never-single-line',
     'selector-max-compound-selectors': 10,
     'selector-max-id': 3,
     'selector-no-qualifying-type': null,
     'selector-no-vendor-prefix': null,
-    'string-quotes': 'single',
     'value-no-vendor-prefix': null,
   },
 };

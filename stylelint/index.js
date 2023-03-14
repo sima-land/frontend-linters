@@ -1,6 +1,6 @@
 module.exports = {
   extends: ['stylelint-config-sass-guidelines'],
-  plugins: ['stylelint-scss', 'stylelint-prettier'],
+  plugins: ['stylelint-scss'],
   ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx', '**/*.html'],
   rules: {
     'at-rule-no-unknown': null,

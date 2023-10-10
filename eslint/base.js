@@ -89,7 +89,7 @@ module.exports = {
       },
     ],
     'jsdoc/check-tag-names': 'error',
-    'jsdoc/newline-after-description': ['error', 'never'],
+    'jsdoc/tag-lines': ['error', 'never'],
     'jsdoc/no-undefined-types': ['error'],
     'jsdoc/require-description-complete-sentence': [
       'error',

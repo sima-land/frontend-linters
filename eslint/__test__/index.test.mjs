@@ -1,4 +1,6 @@
-const { ESLint } = require('eslint');
+import assert from 'node:assert';
+import { test, describe } from 'node:test';
+import { ESLint } from 'eslint';
 
 const validCode = `
 /**
@@ -54,13 +56,13 @@ export function testTypeImport (event) {
 `;
 
 describe('eslint config', () => {
-  it('should not return errors', async function () {
+  test('should not return errors', async function () {
     const eslint = new ESLint();
     const results = await eslint.lintText(validCode);
 
     results.forEach(result => {
-      expect(result.errorCount).toBe(0);
-      expect(result.warningCount).toBe(0);
+      assert.equal(0, result.errorCount);
+      assert.equal(0, result.warningCount);
     });
   });
 });

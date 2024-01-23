@@ -33,7 +33,7 @@ module.exports = {
       },
     ],
     'scss/at-extend-no-missing-placeholder': null,
-    'scss/at-import-no-partial-leading-underscore': null,
+    'scss/load-no-partial-leading-underscore': null,
     'scss/at-mixin-pattern': null,
     'scss/dollar-variable-pattern': null,
     'scss/percent-placeholder-pattern': null,

@@ -108,3 +108,7 @@ ESLint может бросать ошибку, говоря что не може
 - https://eslint.org/docs/user-guide/integrations
 - https://stylelint.io/user-guide/integrations/editor/
 - https://prettier.io/docs/en/editors.html
+
+### Разработка
+
+Данный пакет остается в формате CommonJS поскольку ESLint@8 все еще не поддерживает ESM-формат конфигурации.

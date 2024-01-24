@@ -106,7 +106,7 @@ ESLint может бросать ошибку, говоря что не може
 Актуальная информация в официальных документациях:
 
 - https://eslint.org/docs/user-guide/integrations
-- https://stylelint.io/user-guide/integrations/editor/
+- https://stylelint.io/awesome-stylelint#editor-integrations
 - https://prettier.io/docs/en/editors.html
 
 ### Разработка

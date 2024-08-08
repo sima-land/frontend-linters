@@ -9,7 +9,6 @@
   "scripts": {
     "prepare": "husky || true",
     "lint": "eslint .",
-    "test": "jest",
     "prettier": "prettier --write \"./**/*.{js,jsx,ts,tsx,css,scss}\""
   },
   "repository": {

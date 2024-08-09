@@ -45,7 +45,7 @@ const config = {
     'react/jsx-uses-vars': 'error',
     'react/prop-types': 'off',
 
-    // @todo думаю стоит включить для единообразия
+    // @todo Думаю стоит включить для единообразия
     'react/no-children-prop': 'off',
   },
 };

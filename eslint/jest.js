@@ -12,9 +12,11 @@ const config = {
     'jest/no-identical-title': 'error',
     'jest/prefer-to-have-length': 'error',
     'jest/valid-expect': 'error',
+
+    // в unit-тестах нам не нужен JSDoc
     'jsdoc/require-jsdoc': 'off',
 
-    // @todo не уверен что это правило нужно
+    // @todo Думаю это правило стоит включить
     'jest/no-mocks-import': 'off',
   },
 };

@@ -6,6 +6,7 @@ import jsdocJest from './jsdoc-jest.js';
 import lodash from './lodash.js';
 import react from './react.js';
 import typescript from './typescript.js';
+import testingLibrary from './testing-library.js';
 
 const configs = [
   // для всех правил игнорируем артефакты сборки и установленные модули
@@ -46,6 +47,11 @@ const configs = [
 
   {
     ...jest,
+    files: ['**/*.test.{js,jsx,ts,tsx,cjs,mjs,mts,cts}'],
+  },
+
+  {
+    ...testingLibrary,
     files: ['**/*.test.{js,jsx,ts,tsx,cjs,mjs,mts,cts}'],
   },
 

@@ -1,4 +1,5 @@
-module.exports = {
+/** @type {import("stylelint").Config} */
+const config = {
   extends: ['stylelint-config-sass-guidelines'],
   plugins: ['stylelint-scss'],
   ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx', '**/*.html'],
@@ -16,9 +17,12 @@ module.exports = {
         severity: 'error',
       },
     ],
+
+    // по соглашению с командой дизайнеров не используем для размера шрифта ничего кроме пикселей
     'declaration-property-unit-disallowed-list': {
       'font-size': ['rem', 'em', 'pt', 'percent'],
     },
+
     'function-url-quotes': 'never',
     'max-nesting-depth': 10,
     'media-feature-name-no-vendor-prefix': true,
@@ -45,3 +49,5 @@ module.exports = {
     'value-no-vendor-prefix': null,
   },
 };
+
+module.exports = config;

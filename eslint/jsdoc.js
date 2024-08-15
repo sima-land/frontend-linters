@@ -47,7 +47,6 @@ const config = {
         // https://github.com/gajus/eslint-plugin-jsdoc/issues/1292#issuecomment-2270551333
         contexts: [
           'VariableDeclarator > ArrowFunctionExpression',
-          'AssignmentExpression > ArrowFunctionExpression',
           'ExportDefaultDeclaration > ArrowFunctionExpression',
         ],
 

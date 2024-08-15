@@ -34,26 +34,35 @@ yarn add -D @sima-land/linters eslint stylelint prettier
 
 ##### ESLint
 
-Создать в корне проекта файл `.eslintrc.js` со следующим содержимым:
+Создать в корне проекта файл `eslint.config.mjs` со следующим содержимым:
 
 ```js
-module.exports = {
-  extends: require.resolve('@sima-land/linters/eslint'),
-};
+import simaland from '@sima-land/linters/eslint';
+
+export default [
+  // используем все правила из пакета, собранные вместе
+  ...simaland,
+
+  // ...опционально переопределяем правила
+];
 ```
 
 Правила разбиты по модулям:
 
 - `./linters/eslint/base` - базовые правила JS
+- `./linters/eslint/typescript` - базовые правила TS
 - `./linters/eslint/react` - правила React/JSX
-- `./linters/eslint/react-hooks` - правила React-хуков
-- `./linters/eslint/jest` - правила для Jest-тестов
-- `./linters/eslint/typescript` - для ts/tsx файлов
-- `./linters/eslint` - все правила вместе (без `react-hooks`, временно)
+- `./linters/eslint/lodash` - правила работы с Lodash
+- `./linters/eslint/jest` - правила работы с Jest
+- `./linters/eslint/testing-library` - правила работы с Testing Library
+- `./linters/eslint/jsdoc` - правила оформления JSDoc
+- `./linters/eslint/jsdoc-ts` - правила оформления JSDoc в TS
+- `./linters/eslint/jsdoc-jest` - правила оформления JSDoc в тестах Jest
+- `./linters/eslint` - все правила вместе
 
 ##### Stylelint
 
-Создать в корне проекта файл `stylelint.config.js` со следующим содержимым:
+Создать в корне проекта файл `stylelint.config.сjs` со следующим содержимым:
 
 ```js
 module.exports = {
@@ -79,7 +88,7 @@ module.exports = require('@sima-land/linters/prettier');
 npm i -D husky lint-staged
 ```
 
-2. Создать в корне проекта файл `lint-staged.config.js` со следующим содержимым:
+2. Создать в корне проекта файл `lint-staged.config.сjs` со следующим содержимым:
 
 ```js
 module.exports = {
@@ -92,7 +101,7 @@ module.exports = {
 
 https://typicode.github.io/husky/#/?id=create-a-hook
 
-### Проблемы с ESLint
+### Проблемы с ESLint (до ESLint версии 9)
 
 ESLint может бросать ошибку, говоря что не может найти плагины, требуемые в конфигурации.
 
@@ -101,10 +110,10 @@ ESLint может бросать ошибку, говоря что не може
 - https://www.npmjs.com/package/@rushstack/eslint-patch
 - https://github.com/microsoft/rushstack/tree/main/eslint/eslint-patch
 
-### Конфигурация текстовых редакторов
+### Конфигурация текстовых редакторов и IDE
 
 Актуальная информация в официальных документациях:
 
 - https://eslint.org/docs/user-guide/integrations
-- https://stylelint.io/user-guide/integrations/editor/
+- https://stylelint.io/awesome-stylelint/#editor-integrations
 - https://prettier.io/docs/en/editors.html

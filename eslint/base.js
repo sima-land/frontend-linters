@@ -1,6 +1,7 @@
 import eslint from '@eslint/js';
 import globals from 'globals';
 import restrictedGlobals from 'confusing-browser-globals';
+import stylistic from '@stylistic/eslint-plugin';
 
 const config = {
   name: 'sima-land/base',
@@ -10,6 +11,10 @@ const config = {
       ...globals.node,
       ...globals.browser,
     },
+  },
+
+  plugins: {
+    '@stylistic': stylistic,
   },
 
   rules: {
@@ -49,15 +54,14 @@ const config = {
 
     // =========================================================================
 
-    // @todo Вернуть эти deprecated правила в виде аналогов из пакета @stylistic/eslint-plugin-js
-    // 'eol-last': ['error', 'always'],
-    // 'no-multi-spaces': 'error',
-    // 'no-multiple-empty-lines': ['error', { max: 1, maxBOF: 1, maxEOF: 0 }],
-    // 'no-trailing-spaces': 'error',
-    // 'padded-blocks': ['error', 'never'],
-    // 'quote-props': ['error', 'as-needed'],
-    // 'space-infix-ops': 'error',
-    // 'spaced-comment': ['error', 'always'],
+    '@stylistic/eol-last': ['error', 'always'],
+    '@stylistic/no-multi-spaces': 'error',
+    '@stylistic/no-multiple-empty-lines': ['error', { max: 1, maxBOF: 1, maxEOF: 0 }],
+    '@stylistic/no-trailing-spaces': 'error',
+    '@stylistic/padded-blocks': ['error', 'never'],
+    '@stylistic/quote-props': ['error', 'as-needed'],
+    '@stylistic/space-infix-ops': 'error',
+    '@stylistic/spaced-comment': ['error', 'always'],
 
     // =========================================================================
 

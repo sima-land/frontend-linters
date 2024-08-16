@@ -42,6 +42,14 @@ const configs = [
       // отключаем правило
       'no-unused-expressions': 'off',
       '@typescript-eslint/no-unused-expressions': 'off',
+
+      // свойства/методы классов - по умолчанию публичные, поэтому форсируем для них стиль кода
+      '@typescript-eslint/explicit-member-accessibility': [
+        'error',
+        {
+          accessibility: 'no-public',
+        },
+      ],
     },
   },
 ];

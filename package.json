@@ -37,9 +37,6 @@
     "eslint": {
       "optional": true
     },
-    "prettier": {
-      "optional": true
-    },
     "stylelint": {
       "optional": true
     }

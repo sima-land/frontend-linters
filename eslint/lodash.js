@@ -1,3 +1,4 @@
+// @ts-ignore
 import lodash from 'eslint-plugin-lodash';
 
 const config = {

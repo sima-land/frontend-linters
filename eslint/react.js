@@ -20,16 +20,16 @@ const config = {
   },
 
   plugins: {
-    ...reactRecommended.plugins,
-    ...jsxRuntime.plugins,
+    ...reactRecommended?.plugins,
+    ...jsxRuntime?.plugins,
 
     // @todo Включить когда eslint-plugin-react-hooks научится работать с ESLint 9
     // 'react-hooks': fixupPluginRules(reactHooks),
   },
 
   rules: {
-    ...reactRecommended.rules,
-    ...jsxRuntime.rules,
+    ...reactRecommended?.rules,
+    ...jsxRuntime?.rules,
 
     // переопределяем тк договорились что свойство displayName у компонентов необязательно
     'react/display-name': 'off',

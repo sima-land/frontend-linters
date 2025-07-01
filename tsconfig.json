@@ -10,5 +10,20 @@
     // This compiler run should
     // only output d.ts files
     "emitDeclarationOnly": true,
+    "outDir": "eslint/types",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "target": "es2022",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "isolatedModules": true,
+    "noUncheckedIndexedAccess": true,
+    "checkJs": true
   },
 }

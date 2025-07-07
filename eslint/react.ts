@@ -1,4 +1,5 @@
 import react from 'eslint-plugin-react';
+import type { Linter } from 'eslint';
 
 // @todo Включить когда eslint-plugin-react-hooks научится работать с ESLint 9
 // import reactHooks from 'eslint-plugin-react-hooks';
@@ -7,7 +8,7 @@ import react from 'eslint-plugin-react';
 const reactRecommended = react.configs.flat.recommended;
 const jsxRuntime = react.configs.flat['jsx-runtime'];
 
-const config = {
+const config: Linter.Config = {
   ...reactRecommended,
   ...jsxRuntime,
 

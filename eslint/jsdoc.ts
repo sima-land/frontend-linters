@@ -1,6 +1,7 @@
 import jsdoc from 'eslint-plugin-jsdoc';
+import type { Linter } from 'eslint';
 
-const config = {
+const config: Linter.Config = {
   name: 'sima-land/jsdoc',
 
   plugins: {

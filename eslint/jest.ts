@@ -1,6 +1,7 @@
 import jest from 'eslint-plugin-jest';
+import type { Linter } from 'eslint';
 
-const config = {
+const config: Linter.Config = {
   ...jest.configs['flat/recommended'],
 
   rules: {

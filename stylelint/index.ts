@@ -1,5 +1,6 @@
-/** @type {import("stylelint").Config} */
-const config = {
+import type { Config } from 'stylelint';
+
+const config: Config = {
   extends: ['stylelint-config-sass-guidelines'],
   plugins: ['stylelint-scss'],
   ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx', '**/*.html'],
@@ -50,4 +51,4 @@ const config = {
   },
 };
 
-module.exports = config;
+export default config;

@@ -2,8 +2,9 @@ import eslint from '@eslint/js';
 import globals from 'globals';
 import restrictedGlobals from 'confusing-browser-globals';
 import stylistic from '@stylistic/eslint-plugin';
+import type { Linter } from 'eslint';
 
-const config = {
+const config: Linter.Config = {
   name: 'sima-land/base',
 
   languageOptions: {
@@ -43,7 +44,10 @@ const config = {
     'no-shadow': ['error', { builtinGlobals: false }],
     'no-undef': 'error',
     'no-unneeded-ternary': 'error',
-    'no-use-before-define': ['error', { variables: false, functions: false, classes: false }],
+    'no-use-before-define': [
+      'error',
+      { variables: false, functions: false, classes: false },
+    ],
     'no-useless-constructor': 'error',
     'no-useless-return': 'error',
     'no-var': 'error',
@@ -56,7 +60,10 @@ const config = {
 
     '@stylistic/eol-last': ['error', 'always'],
     '@stylistic/no-multi-spaces': 'error',
-    '@stylistic/no-multiple-empty-lines': ['error', { max: 1, maxBOF: 1, maxEOF: 0 }],
+    '@stylistic/no-multiple-empty-lines': [
+      'error',
+      { max: 1, maxBOF: 1, maxEOF: 0 },
+    ],
     '@stylistic/no-trailing-spaces': 'error',
     '@stylistic/padded-blocks': ['error', 'never'],
     '@stylistic/quote-props': ['error', 'as-needed'],

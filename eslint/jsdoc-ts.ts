@@ -1,6 +1,7 @@
+import type { Linter } from 'eslint';
 import jsdoc from './jsdoc.js';
 
-const config = {
+const config: Linter.Config = {
   ...jsdoc,
 
   name: 'sima-land/jsdoc-ts',

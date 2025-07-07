@@ -14,7 +14,13 @@ export default tseslint.config(
   // для всех правил игнорируем артефакты сборки и установленные модули
   {
     name: 'sima-land/ignores',
-    ignores: ['**/build/**', '**/dist/**', '**/node_modules/**'],
+    ignores: [
+      '**/build/**',
+      '**/dist/**',
+      '**/node_modules/**',
+      '**/coverage/**',
+      '**/temp/**',
+    ],
   },
 
   {

@@ -13,11 +13,10 @@
   },
   "scripts": {
     "prepare": "husky",
-    "lint": "eslint",
+    "lint": "eslint && tsc --noEmit",
     "prettier:write": "prettier . --write --ignore-unknown",
     "prettier:check": "prettier . --check --ignore-unknown",
-    "type:check": "tsc --noEmit",
-    "build": "rm -rf build && tsc"
+    "build": "rm -rf dist && tsc"
   },
   "dependencies": {
     "@eslint/compat": "^1.3.1",

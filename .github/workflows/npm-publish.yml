@@ -25,7 +25,6 @@ jobs:
 
       - name: Lint
         run: |
-          npm run type:check
           npm run lint
           npm run prettier:check
 

@@ -2,7 +2,7 @@ import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 
 // @todo заменить на defineConfig из eslint/config после того как решат проблему с типами https://github.com/typescript-eslint/typescript-eslint/issues/10899
-const config = tseslint.config(
+export default tseslint.config(
   // используем рекомендуемые правила ESLint
   eslint.configs.recommended,
 
@@ -54,5 +54,3 @@ const config = tseslint.config(
     },
   },
 );
-
-export default config;

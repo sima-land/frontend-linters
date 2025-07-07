@@ -47,20 +47,6 @@ export default [
 ];
 ```
 
-или `eslint.config.ts`
-
-```ts
-import simaland from '@sima-land/linters/prettier';
-import tseslint from 'typescript-eslint';
-
-export default tseslint.config({
-  // используем все правила из пакета, собранные вместе
-  ...simaland,
-
-  // ...опционально переопределяем правила
-});
-```
-
 Правила разбиты по модулям:
 
 - `./linters/eslint/base` - базовые правила JS
@@ -79,32 +65,14 @@ export default tseslint.config({
 Создать в корне проекта файл `stylelint.config.mjs` со следующим содержимым:
 
 ```js
-import simaland from '@sima-land/linters/stylelint';
-
 export default {
-  // используем все правила из пакета, собранные вместе
-  ...simaland,
-
-  // ...опционально переопределяем правила
+  extends: '@sima-land/linters/stylelint',
 };
 ```
 
 ##### Prettier
 
-Создать в корне проекта файл `prettier.config.mjs` со следующим содержимым:
-
-```js
-import simaland from '@sima-land/linters/prettier';
-
-export default {
-  // используем все правила из пакета, собранные вместе
-  ...simaland,
-
-  // ...опционально переопределяем правила
-};
-```
-
-или `.prettierrc`
+Создать в корне проекта файл `prettierrc` со следующим содержимым:
 
 ```json
 "@sima-land/linters/prettier"

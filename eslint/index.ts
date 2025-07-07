@@ -9,7 +9,8 @@ import react from './react.js';
 import typescript from './typescript.js';
 import testingLibrary from './testing-library.js';
 
-const configs = tseslint.config(
+// @todo заменить на defineConfig из eslint/config после того как решат проблему с типами https://github.com/typescript-eslint/typescript-eslint/issues/10899
+export default tseslint.config(
   // для всех правил игнорируем артефакты сборки и установленные модули
   {
     name: 'sima-land/ignores',
@@ -56,10 +57,8 @@ const configs = tseslint.config(
     files: ['**/*.test.{js,jsx,ts,tsx,cjs,mjs,mts,cts}'],
   },
 
-  ...typescript.map((item) => ({
+  ...typescript.map(item => ({
     ...item,
     files: ['**/*.{ts,tsx,mts,cts}'],
   })),
 );
-
-export default configs;

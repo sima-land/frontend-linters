@@ -86,7 +86,7 @@ export default {
 
 ##### Prettier
 
-Создать в корне проекта файл `prettierrc` со следующим содержимым:
+Создать в корне проекта файл `.prettierrc` со следующим содержимым:
 
 ```json
 "@sima-land/linters/prettier"

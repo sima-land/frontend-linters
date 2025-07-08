@@ -13,7 +13,7 @@
   },
   "scripts": {
     "prepare": "husky",
-    "lint": "eslint && tsc --noEmit",
+    "lint": "tsc --noEmit && eslint",
     "prettier:write": "prettier . --write --ignore-unknown",
     "prettier:check": "prettier . --check --ignore-unknown",
     "build": "rm -rf dist && tsc"

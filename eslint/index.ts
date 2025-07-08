@@ -63,7 +63,7 @@ export default tseslint.config(
     files: ['**/*.test.{js,jsx,ts,tsx,cjs,mjs,mts,cts}'],
   },
 
-  ...typescript.map(item => ({
+  ...typescript.map((item) => ({
     ...item,
     files: ['**/*.{ts,tsx,mts,cts}'],
   })),

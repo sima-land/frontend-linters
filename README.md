@@ -47,6 +47,20 @@ export default [
 ];
 ```
 
+или `eslint.config.ts`
+
+```ts
+import tseslint from 'typescript-eslint';
+import simaland from '@sima-land/linters/eslint';
+
+export default tseslint.config(
+  // используем все правила из пакета, собранные вместе
+  simaland,
+
+  // ...опционально переопределяем правила
+);
+```
+
 Правила разбиты по модулям:
 
 - `./linters/eslint/base` - базовые правила JS
@@ -101,15 +115,6 @@ export default {
 3. Добавить **pre-commit** хук согласно документации husky: `npx lint-staged`
 
    <https://typicode.github.io/husky/#/?id=create-a-hook>
-
-   ### Проблемы с ESLint (до ESLint версии 9)
-
-   ESLint может бросать ошибку, говоря что не может найти плагины, требуемые в конфигурации.
-
-   В этом случае поможет пакет `@rushstack/eslint-patch`:
-
-- <https://www.npmjs.com/package/@rushstack/eslint-patch>
-- <https://github.com/microsoft/rushstack/tree/main/eslint/eslint-patch>
 
 ### Конфигурация текстовых редакторов и IDE
 

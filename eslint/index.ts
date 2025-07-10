@@ -1,3 +1,4 @@
+import tseslint from 'typescript-eslint';
 import base from './base.js';
 import jest from './jest.js';
 import jsdoc from './jsdoc.js';
@@ -8,11 +9,18 @@ import react from './react.js';
 import typescript from './typescript.js';
 import testingLibrary from './testing-library.js';
 
-const configs = [
+// @todo заменить на defineConfig из eslint/config после того как решат проблему с типами https://github.com/typescript-eslint/typescript-eslint/issues/10899
+export default tseslint.config(
   // для всех правил игнорируем артефакты сборки и установленные модули
   {
     name: 'sima-land/ignores',
-    ignores: ['**/build/**', '**/dist/**', '**/node_modules/**'],
+    ignores: [
+      '**/build/**',
+      '**/dist/**',
+      '**/node_modules/**',
+      '**/coverage/**',
+      '**/temp/**',
+    ],
   },
 
   {
@@ -59,6 +67,4 @@ const configs = [
     ...item,
     files: ['**/*.{ts,tsx,mts,cts}'],
   })),
-];
-
-export default configs;
+);

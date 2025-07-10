@@ -1,12 +1,13 @@
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 
-const configs = [
+// @todo заменить на defineConfig из eslint/config после того как решат проблему с типами https://github.com/typescript-eslint/typescript-eslint/issues/10899
+export default tseslint.config(
   // используем рекомендуемые правила ESLint
   eslint.configs.recommended,
 
   // используем рекомендуемые правила typescript-eslint
-  ...tseslint.configs.recommended,
+  tseslint.configs.recommended,
 
   {
     name: 'sima-land/typescript',
@@ -52,6 +53,4 @@ const configs = [
       ],
     },
   },
-];
-
-export default configs;
+);

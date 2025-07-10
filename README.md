@@ -47,6 +47,20 @@ export default [
 ];
 ```
 
+или `eslint.config.ts`
+
+```ts
+import tseslint from 'typescript-eslint';
+import simaland from '@sima-land/linters/eslint';
+
+export default tseslint.config(
+  // используем все правила из пакета, собранные вместе
+  simaland,
+
+  // ...опционально переопределяем правила
+);
+```
+
 Правила разбиты по модулям:
 
 - `./linters/eslint/base` - базовые правила JS
@@ -62,20 +76,20 @@ export default [
 
 ##### Stylelint
 
-Создать в корне проекта файл `stylelint.config.сjs` со следующим содержимым:
+Создать в корне проекта файл `stylelint.config.mjs` со следующим содержимым:
 
 ```js
-module.exports = {
-  extends: require.resolve('@sima-land/linters/stylelint'),
+export default {
+  extends: '@sima-land/linters/stylelint',
 };
 ```
 
 ##### Prettier
 
-Создать в корне проекта файл `.prettierrc.js` со следующим содержимым:
+Создать в корне проекта файл `.prettierrc` со следующим содержимым:
 
-```js
-module.exports = require('@sima-land/linters/prettier');
+```json
+"@sima-land/linters/prettier"
 ```
 
 ### Настройка git-хуков
@@ -84,36 +98,28 @@ module.exports = require('@sima-land/linters/prettier');
 
 1. Установить пакеты
 
-```bash
-npm i -D husky lint-staged
-```
+   ```bash
+   npm i -D husky lint-staged
+   ```
 
-2. Создать в корне проекта файл `lint-staged.config.сjs` со следующим содержимым:
+2. Создать в корне проекта файл `lint-staged.config.js` со следующим содержимым:
 
-```js
-module.exports = {
-  '*.{js,jsx,ts,tsx}': ['prettier --write', 'eslint --fix --ext .js,.jsx,.ts,.tsx'],
-  '*.{css,scss}': ['prettier --write', 'stylelint'],
-};
-```
+   ```js
+   {
+     '*.{mjs,js,jsx,ts,tsx}': ['eslint --fix'],
+     '*.{css,scss}': ['stylelint --fix'],
+     '*': ['prettier --write --ignore-unknown'],
+   };
+   ```
 
 3. Добавить **pre-commit** хук согласно документации husky: `npx lint-staged`
 
-https://typicode.github.io/husky/#/?id=create-a-hook
-
-### Проблемы с ESLint (до ESLint версии 9)
-
-ESLint может бросать ошибку, говоря что не может найти плагины, требуемые в конфигурации.
-
-В этом случае поможет пакет `@rushstack/eslint-patch`:
-
-- https://www.npmjs.com/package/@rushstack/eslint-patch
-- https://github.com/microsoft/rushstack/tree/main/eslint/eslint-patch
+   <https://typicode.github.io/husky/#/?id=create-a-hook>
 
 ### Конфигурация текстовых редакторов и IDE
 
 Актуальная информация в официальных документациях:
 
-- https://eslint.org/docs/user-guide/integrations
-- https://stylelint.io/awesome-stylelint/#editor-integrations
-- https://prettier.io/docs/en/editors.html
+- <https://eslint.org/docs/user-guide/integrations>
+- <https://stylelint.io/awesome-stylelint/#editor-integrations>
+- <https://prettier.io/docs/en/editors.html>

@@ -1,6 +1,7 @@
 import lodash from 'eslint-plugin-lodash';
+import type { Linter } from 'eslint';
 
-const config = {
+const config: Linter.Config = {
   name: 'sima-land/lodash',
 
   plugins: {

@@ -1,4 +1,6 @@
-const config = {
+import type { Linter } from 'eslint';
+
+const config: Linter.Config = {
   name: 'sima-land/testing-library',
 
   rules: {

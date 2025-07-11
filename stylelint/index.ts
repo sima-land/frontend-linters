@@ -48,6 +48,7 @@ const config: Config = {
     'selector-no-qualifying-type': null,
     'selector-no-vendor-prefix': null,
     'value-no-vendor-prefix': null,
+    '@stylistic/function-parentheses-space-inside': null,
   },
 };
 
